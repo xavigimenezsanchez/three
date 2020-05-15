@@ -17,11 +17,12 @@ import { BufferAttribute, Color } from 'three';
     const pIntersect = new THREE.Vector3()
     const planeIntersect = new THREE.Vector3()
     const shift = new THREE.Vector3()
-    const texture1 = new THREE.TextureLoader().load('marble-texture.jpg')
-    const texture2 = new THREE.TextureLoader().load('wood.jpg')
-    const texture3 = new THREE.TextureLoader().load('water.jpg')
-    const texture4 = new THREE.TextureLoader().load('silk.jpg')
+    const texture1 = new THREE.TextureLoader().load('three/marble-texture.jpg')
+    const texture2 = new THREE.TextureLoader().load('three/wood.jpg')
+    const texture3 = new THREE.TextureLoader().load('three/water.jpg')
+    const texture4 = new THREE.TextureLoader().load('three/silk.jpg')
     const material= [new THREE.MeshBasicMaterial( { map: texture3 } ), new THREE.MeshBasicMaterial( { map: texture2 } ), new THREE.MeshBasicMaterial( { map: texture1 }), new THREE.MeshBasicMaterial( { map: texture4 } )]
+    const backgroundTexture = new THREE.TextureLoader().load('three/background.jpeg')
     const onMouseDown = (event) => {
       console.log(meshs)
       const intersects = raycaster.intersectObjects(meshs);
@@ -54,7 +55,7 @@ import { BufferAttribute, Color } from 'three';
 
     // === THREE.JS CODE START ===
     var scene = new THREE.Scene();
-    scene.background = new Color( 'black')
+    scene.background = new Color( 'orange')
     
     var renderer = new THREE.WebGLRenderer({ antialias: true });
     
@@ -107,9 +108,10 @@ const  Scene= ({ dispatch, spheres}) => {
         renderer.setSize(mount.offsetParent.offsetWidth, window.innerHeight );
         renderer.setPixelRatio( window.devicePixelRatio );
         
-        camera.position.set(0, 0, 10);
+        camera.position.set(0, 0, 20);
         camera.lookAt(scene.position);
         controls = new OrbitControls(camera, renderer.domElement)
+        scene.background = backgroundTexture
         init = false;
       }
     update(spheres)
