@@ -1,0 +1,24 @@
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+}
+.col-1 {
+  flex-grow: 1;
+}
+.col-2 {
+  flex-grow: 2;
+}
+.col-3 {
+  flex-grow: 3;
+}
+.col-4 {
+  flex-grow: 4;
+}
+.col-5 {
+  flex-grow: 5;
+}
+.col-6 {
+  flex-grow: 6;
+}
