@@ -22,7 +22,7 @@ import { BufferAttribute, Color } from 'three';
     const texture3 = new THREE.TextureLoader().load('water.jpg')
     const texture4 = new THREE.TextureLoader().load('silk.jpg')
     const material= [new THREE.MeshBasicMaterial( { map: texture3 } ), new THREE.MeshBasicMaterial( { map: texture2 } ), new THREE.MeshBasicMaterial( { map: texture1 }), new THREE.MeshBasicMaterial( { map: texture4 } )]
-    const backgroundTexture = new THREE.TextureLoader().load('three/background.jpeg')
+    const backgroundTexture = new THREE.TextureLoader().load('background.jpeg')
     const onMouseDown = (event) => {
       console.log(meshs)
       const intersects = raycaster.intersectObjects(meshs);
